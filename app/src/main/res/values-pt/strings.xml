@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrucoDuck</string>
+    <string name="player_one">Jogador 1</string>
+    <string name="player_two">Jogador 2</string>
+    <string name="game_history">Histórico de jogos</string>
+    <string name="reset_history">Zerar histórico</string>
+    <string name="info_names">Info nomes</string>
+    <string name="confirm">Confirmar</string>
+    <string name="start">Iniciar</string>
+    <string name="logo_description">Logotipo do jogo Truco Duck com um pato segurando cartas.</string>
+    <string name="set_player_title">Quem são os jogadores?</string>
+</resources>

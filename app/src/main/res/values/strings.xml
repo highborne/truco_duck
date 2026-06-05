@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TrucoDuck</string>
+    <string name="player_one">Player 1</string>
+    <string name="player_two">Player 2</string>
+    <string name="game_history">Game history</string>
+    <string name="reset_history">Reset history</string>
+    <string name="info_names">Info names</string>
+    <string name="confirm">Confirm</string>
+    <string name="start">Start</string>
+    <string name="logo_description">Logo for the Truco Duck game featuring a duck holding cards.</string>
+    <string name="set_player_title">Who are the players?</string>
+</resources>
