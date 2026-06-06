@@ -5,9 +5,12 @@
     <string name="player_two">Jogador 2</string>
     <string name="game_history">Histórico de jogos</string>
     <string name="reset_history">Zerar histórico</string>
-    <string name="info_names">Info nomes</string>
+    <string name="inf_names">Inf. nomes</string>
     <string name="confirm">Confirmar</string>
     <string name="start">Iniciar</string>
     <string name="logo_description">Logotipo do jogo Truco Duck com um pato segurando cartas.</string>
     <string name="set_player_title">Quem são os jogadores?</string>
+    <string name="set_player_text_field_label">Nome do jogador</string>
+    <string name="play_history_label">Históricos  jogadas</string>
+    <string name="reset_history_label">Zerar histórico</string>
 </resources>

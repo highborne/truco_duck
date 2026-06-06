@@ -16,13 +16,12 @@
             android:id="@+id/set_players_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-
             android:layout_marginBottom="32dp"
+
             android:text="@string/set_player_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
             app:layout_constraintBottom_toTopOf="@+id/player_one_fields"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,18 +49,19 @@
                 android:text="@string/player_one" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/player_one_name"
+                android:id="@+id/input_layout_player_one"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:startIconDrawable="@drawable/outline_award_star_24"
-                android:minHeight="48dp">
+                app:startIconDrawable="@drawable/man_24" >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/player_one_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content"
 
+                    android:minHeight="48dp" />
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -85,19 +85,20 @@
                 android:text="@string/player_two" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/player_two_name"
+                android:id="@+id/input_layout_player_two"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                app:startIconDrawable="@drawable/outline_award_star_24">
+                app:startIconDrawable="@drawable/man_3_24" >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/player_two_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp" />
             </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
 
+        </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/set_players_button"

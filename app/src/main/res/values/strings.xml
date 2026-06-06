@@ -4,9 +4,12 @@
     <string name="player_two">Player 2</string>
     <string name="game_history">Game history</string>
     <string name="reset_history">Reset history</string>
-    <string name="info_names">Info names</string>
+    <string name="inf_names">Inf. names</string>
     <string name="confirm">Confirm</string>
     <string name="start">Start</string>
     <string name="logo_description">Logo for the Truco Duck game featuring a duck holding cards.</string>
     <string name="set_player_title">Who are the players?</string>
+    <string name="set_player_text_field_label">Player name</string>
+    <string name="play_history_label">Play history</string>
+    <string name="reset_history_label">Reset history</string>
 </resources>

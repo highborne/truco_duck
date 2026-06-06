@@ -21,7 +21,6 @@ class StartActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
 
         val btnStart = findViewById<Button>(R.id.start_button)
 
@@ -30,18 +29,5 @@ class StartActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-
-
-        when (currentNightMode) {
-            Configuration.UI_MODE_NIGHT_NO -> {
-                Log.i("THEMA", "UI_MODE_NIGHT_NO")
-            }
-
-
-            Configuration.UI_MODE_NIGHT_YES -> {
-                Log.i("THEMA", "UI_MODE_NIGHT_YES")
-            }
-        }
-
     }
 }

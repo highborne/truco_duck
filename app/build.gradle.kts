@@ -10,6 +10,10 @@ android {
         }
     }
 
+    buildFeatures {
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.esomakers.trucoduck"
         minSdk = 24
@@ -27,6 +31,7 @@ android {
             }
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
