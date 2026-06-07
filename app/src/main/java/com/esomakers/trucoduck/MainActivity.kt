@@ -1,8 +1,9 @@
 package com.esomakers.trucoduck
 
 import android.content.Intent
+import android.icu.text.SimpleDateFormat
+import android.icu.util.Calendar
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -13,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.io.Serializable
 import java.time.LocalDateTime
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     private lateinit var playerOne: PlayerResult
@@ -80,9 +82,12 @@ class MainActivity : AppCompatActivity() {
         verifyEndOfGame()
     }
     fun verifyEndOfGame() {
+        val currentDateTime = Calendar.getInstance().time
+        val formatter = SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss", Locale.getDefault())
+
         if(playerOne.points >= 12) {
             playerOne.winNumber += 1
-            gameResult = GameResult(playerOne, playerTwo, LocalDateTime.now().toString())
+            gameResult = GameResult(playerOne, playerTwo, formatter.format(currentDateTime))
 
             showWinnerScoreModal()
             return
@@ -90,14 +95,13 @@ class MainActivity : AppCompatActivity() {
 
         if(playerTwo.points >= 12) {
             playerTwo.winNumber += 1
-            gameResult = GameResult(playerTwo, playerOne, LocalDateTime.now().toString())
+            gameResult = GameResult(playerTwo, playerOne, formatter.format(currentDateTime))
 
             showWinnerScoreModal()
             return
         }
     }
     fun showWinnerScoreModal() {
-        Log.e("CLICK", gameResult.toString())
         val modalBuilder = AlertDialog.Builder(this)
         val inflater = layoutInflater
 

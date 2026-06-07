@@ -26,4 +26,5 @@
     <string name="player_name_error">Digite o nome do jogador.</string>
     <string name="close_button_label">Fechar</string>
     <string name="game_date_label">Data jogo</string>
+    <string name="empty_history_label">Não há jogos a serem exibidos.</string>
 </resources>

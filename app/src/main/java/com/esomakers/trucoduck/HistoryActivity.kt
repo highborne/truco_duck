@@ -23,13 +23,19 @@ class HistoryActivity: AppCompatActivity() {
 
         val historyTable = findViewById<LinearLayout>(R.id.table_container)
         val inflater = LayoutInflater.from(this)
-
         val repository = GameRepository(this)
         val gameList = repository.getSavedGames()
 
         historyTable.removeAllViews()
 
         if(gameList.isEmpty()) {
+            val emptyTextView = TextView(this).apply {
+                text = getString(R.string.empty_history_label)
+                gravity = android.view.Gravity.CENTER
+                textSize = 16f
+                setPadding(0, 32, 0, 0)
+            }
+            historyTable.addView(emptyTextView)
             return
         } else {
             gameList.forEachIndexed { index, game ->
@@ -37,19 +43,14 @@ class HistoryActivity: AppCompatActivity() {
 
                 viewLine.findViewById<TextView>(R.id.game_number).text = "#${index + 1}"
 
-                val winner = if (game.winner.playerPosition != 0) game.winner else game.loser
-                val loser = if (game.winner.playerPosition == 0) game.winner else game.loser
-
-                viewLine.findViewById<TextView>(R.id.winner_text_label).text = "${winner.name.trim()} (${winner.points} pts)"
-                viewLine.findViewById<TextView>(R.id.loser_text_label).text = "${loser.name.trim()} (${loser.points} pts) "
+                viewLine.findViewById<TextView>(R.id.winner_text_label).text = "${game.winner.name.trim()} (${game.winner.points} pts)"
+                viewLine.findViewById<TextView>(R.id.loser_text_label).text = "${game.loser.name.trim()} (${game.loser.points} pts) "
 
                 val formattedDate = game.gameDate.take(16).replace("T", "\n")
                 viewLine.findViewById<TextView>(R.id.game_date).text = formattedDate
 
                 historyTable.addView(viewLine)
-
             }
         }
-
     }
 }
