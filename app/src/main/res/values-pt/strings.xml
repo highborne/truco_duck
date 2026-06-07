@@ -23,4 +23,7 @@
     <string name="rounds_modal_title">Placar de vitorias</string>
     <string name="scoring_button_description">Botão de pontuação</string>
     <string name="points_number">00</string>
+    <string name="player_name_error">Digite o nome do jogador.</string>
+    <string name="close_button_label">Fechar</string>
+    <string name="game_date_label">Data jogo</string>
 </resources>

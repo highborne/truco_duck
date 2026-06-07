@@ -28,8 +28,13 @@ class SetPlayersActivity : AppCompatActivity() {
             val playerOneName = etPlayerOneName.text.toString()
             val playerTwoName = etPlayerTwoName.text.toString()
 
-            if(playerOneName.isEmpty() || playerTwoName.isEmpty()) {
-                etPlayerOneName.error = "digite o nome dos jogadores"
+            if(playerOneName.isEmpty()) {
+                etPlayerOneName.error = getString(R.string.player_name_error)
+                return@setOnClickListener
+            }
+
+            if(playerTwoName.isEmpty()) {
+                etPlayerTwoName.error = getString(R.string.player_name_error)
                 return@setOnClickListener
             }
 
