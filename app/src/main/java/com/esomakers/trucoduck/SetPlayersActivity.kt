@@ -3,6 +3,8 @@ package com.esomakers.trucoduck
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,6 +25,19 @@ class SetPlayersActivity : AppCompatActivity() {
         val etPlayerOneName = findViewById<TextInputEditText>(R.id.player_one_name)
         val etPlayerTwoName = findViewById<TextInputEditText>(R.id.player_two_name)
         val btnInitializerGame= findViewById<Button>(R.id.set_players_button)
+
+        val callback = object : androidx.activity.OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val intent = android.content.Intent(applicationContext, StartActivity::class.java).apply {
+                    flags = android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP or android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP
+                }
+                startActivity(intent)
+
+                this@SetPlayersActivity.finish()
+            }
+        }
+
+        onBackPressedDispatcher.addCallback(this, callback)
 
         btnInitializerGame.setOnClickListener {
             val playerOneName = etPlayerOneName.text.toString()

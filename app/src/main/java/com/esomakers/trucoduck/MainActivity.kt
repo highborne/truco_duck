@@ -97,7 +97,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun showWinnerScoreModal() {
-        Log.e("CLICK", gameResult.toString())
         val modalBuilder = AlertDialog.Builder(this)
         val inflater = layoutInflater
 

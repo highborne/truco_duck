@@ -25,4 +25,5 @@
     <string name="player_name_error">Enter the player\'s name.</string>
     <string name="close_button_label">Close</string>
     <string name="game_date_label">Game date</string>
+    <string name="empty_history_label">There are no games to be shown.</string>
 </resources>

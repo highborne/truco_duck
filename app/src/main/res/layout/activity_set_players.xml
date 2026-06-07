@@ -22,6 +22,7 @@
 
             android:text="@string/set_player_title"
 
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toTopOf="@+id/player_one_fields"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +58,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/player_one_name"
-                    android:layout_width="488dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +93,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/player_two_name"
-                    android:layout_width="488dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp" />
             </com.google.android.material.textfield.TextInputLayout>

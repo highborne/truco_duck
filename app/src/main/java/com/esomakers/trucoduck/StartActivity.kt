@@ -21,10 +21,15 @@ class StartActivity : AppCompatActivity() {
         }
 
         val btnStart = findViewById<Button>(R.id.start_button)
+        val btnHistory = findViewById<Button>(R.id.history_button)
 
         btnStart.setOnClickListener {
             val intent = Intent(this, SetPlayersActivity::class.java)
+            startActivity(intent)
+        }
 
+        btnHistory.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
             startActivity(intent)
         }
     }
