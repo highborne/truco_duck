@@ -11,6 +11,16 @@
     <string name="logo_description">Logotipo do jogo Truco Duck com um pato segurando cartas.</string>
     <string name="set_player_title">Quem são os jogadores?</string>
     <string name="set_player_text_field_label">Nome do jogador</string>
-    <string name="play_history_label">Históricos  jogadas</string>
-    <string name="reset_history_label">Zerar histórico</string>
+    <string name="rounds_history_label">Histórico jogadas</string>
+    <string name="rounds_reset_label">Zerar jogadas</string>
+    <string name="earned_points_message">Pontos ganhos</string>
+    <string name="try_again_message">Tente na próxima</string>
+    <string name="winner_label">Vencedor</string>
+    <string name="loser_label">Perdedor</string>
+    <string name="player">Jogador</string>
+    <string name="winner_title">Temos um vencedor!</string>
+    <string name="new_game">Nova Partida</string>
+    <string name="rounds_modal_title">Placar de vitorias</string>
+    <string name="scoring_button_description">Botão de pontuação</string>
+    <string name="points_number">00</string>
 </resources>

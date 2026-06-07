@@ -38,7 +38,7 @@ class SetPlayersActivity : AppCompatActivity() {
             intent.putExtra("player_one_name", playerOneName)
             intent.putExtra("player_two_name", playerTwoName)
 
-            startActivity(intent);
+            startActivity(intent)
         }
     }
 }

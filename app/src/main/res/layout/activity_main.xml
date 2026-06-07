@@ -42,22 +42,21 @@
                 android:id="@+id/player_one_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
                 android:layout_marginTop="24dp"
-                android:text="00"
+                android:text="@string/points_number"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                app:layout_constraintStart_toEndOf="@+id/player_one_name_label"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/player_one_btn_counter_one"
-                android:onClick="onPointsButtonClicked"
                 style="@style/Widget.Material3.Button.IconButton"
+
+                android:id="@+id/player_one_btn_counter_one"
+                android:contentDescription="@string/scoring_button_description"
+                android:onClick="onPointsButtonClicked"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
-
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
@@ -72,10 +71,10 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.IconButton"
+
                 android:id="@+id/player_one_btn_counter_three"
                 android:onClick="onPointsButtonClicked"
-
-                style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
@@ -94,20 +93,21 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.IconButton"
+
+                android:contentDescription="@string/scoring_button_description"
                 android:id="@+id/player_one_btn_counter_six"
                 android:onClick="onPointsButtonClicked"
-
-                style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
                 android:padding="0dp"
+
                 app:icon="@drawable/outline_counter_6_24"
                 app:iconPadding="0dp"
                 app:iconSize="52dp"
@@ -116,20 +116,21 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.IconButton"
+
+                android:contentDescription="@string/scoring_button_description"
                 android:id="@+id/player_one_btn_counter_nine"
                 android:onClick="onPointsButtonClicked"
-
-                style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
                 android:padding="0dp"
+
                 app:icon="@drawable/outline_counter_9_24"
                 app:iconPadding="0dp"
                 app:iconSize="52dp"
@@ -138,38 +139,37 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.IconButton"
+
+                android:contentDescription="@string/scoring_button_description"
                 android:id="@+id/player_one_btn_counter_twelve"
                 android:onClick="onPointsButtonClicked"
-
-                style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
                 android:padding="0dp"
+
                 app:icon="@drawable/outline_award_star_24"
                 app:iconPadding="0dp"
                 app:iconSize="52dp"
                 app:layout_constraintStart_toEndOf="@+id/player_one_btn_counter_nine"
                 app:layout_constraintTop_toBottomOf="@+id/player_one_name_label"
                 app:tint="?attr/colorOnBackground" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/player_two_counter_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-
             android:layout_marginEnd="16dp"
+
             app:layout_constraintBottom_toTopOf="@+id/actions_button_field"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -183,6 +183,7 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/player_two"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -190,22 +191,22 @@
                 android:id="@+id/player_two_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
                 android:layout_marginTop="24dp"
-                android:text="00"
+                android:text="@string/points_number"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                app:layout_constraintStart_toEndOf="@+id/player_two_name_label"
+
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/player_two_btn_counter_one"
                 style="@style/Widget.Material3.Button.IconButton"
+
+                android:contentDescription="@string/scoring_button_description"
+                android:id="@+id/player_two_btn_counter_one"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
                 android:insetLeft="0dp"
-
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
@@ -220,9 +221,9 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/player_two_btn_counter_three"
                 style="@style/Widget.Material3.Button.IconButton"
 
+                android:id="@+id/player_two_btn_counter_three"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
@@ -234,6 +235,7 @@
                 android:insetBottom="0dp"
                 android:onClick="onPointsButtonClicked"
                 android:padding="0dp"
+
                 app:icon="@drawable/outline_counter_3_24"
                 app:iconPadding="0dp"
                 app:iconSize="52dp"
@@ -242,20 +244,21 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/player_two_btn_counter_six"
                 style="@style/Widget.Material3.Button.IconButton"
 
+                android:contentDescription="@string/scoring_button_description"
+                android:id="@+id/player_two_btn_counter_six"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
                 android:onClick="onPointsButtonClicked"
                 android:padding="0dp"
+
                 app:icon="@drawable/outline_counter_6_24"
                 app:iconPadding="0dp"
                 app:iconSize="52dp"
@@ -264,20 +267,21 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/player_two_btn_counter_nine"
                 style="@style/Widget.Material3.Button.IconButton"
 
+                android:contentDescription="@string/scoring_button_description"
+                android:id="@+id/player_two_btn_counter_nine"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
                 android:onClick="onPointsButtonClicked"
                 android:padding="0dp"
+
                 app:icon="@drawable/outline_counter_9_24"
                 app:iconPadding="0dp"
                 app:iconSize="52dp"
@@ -286,87 +290,83 @@
                 app:tint="?attr/colorOnBackground" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/player_two_btn_counter_twelve"
                 style="@style/Widget.Material3.Button.IconButton"
 
+                android:contentDescription="@string/scoring_button_description"
+                android:id="@+id/player_two_btn_counter_twelve"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="Ação de alto destaque"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
                 android:onClick="onPointsButtonClicked"
                 android:padding="0dp"
+
                 app:icon="@drawable/outline_award_star_24"
                 app:iconPadding="0dp"
                 app:iconSize="52dp"
                 app:layout_constraintStart_toEndOf="@+id/player_two_btn_counter_nine"
                 app:layout_constraintTop_toBottomOf="@+id/player_two_name_label"
                 app:tint="?attr/colorOnBackground" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/actions_button_field"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/player_two_counter_field">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/reset_history_button"
                 style="@style/Widget.Material3.Button"
+
+                android:id="@+id/history_rounds_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-
-                android:minWidth="128dip"
-                android:text="@string/reset_history_label"
-                app:cornerRadius="1dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/play_history_button"
-                app:layout_constraintTop_toBottomOf="@+id/play_history_button"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/inf_names_buttons"
-                style="@style/Widget.Material3.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="16dp"
-                android:minWidth="128dip"
-                android:text="@string/inf_names"
-                app:cornerRadius="1dp"
-                app:layout_constraintStart_toStartOf="@+id/play_history_button"
-                app:layout_constraintTop_toBottomOf="@+id/play_history_button" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/play_history_button"
-                style="@style/Widget.Material3.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="8dp"
                 android:minWidth="272dp"
+                android:text="@string/rounds_history_label"
 
-                android:text="@string/play_history_label"
                 app:cornerRadius="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button"
+
+                android:id="@+id/inf_names_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minWidth="128dip"
+                android:text="@string/inf_names"
+
+                app:cornerRadius="1dp"
+                app:layout_constraintStart_toStartOf="@+id/history_rounds_button"
+                app:layout_constraintTop_toBottomOf="@+id/history_rounds_button" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/reset_rounds_button"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+                android:minWidth="128dip"
+                android:text="@string/rounds_reset_label"
+                app:cornerRadius="1dp"
+                app:layout_constraintEnd_toEndOf="@+id/history_rounds_button"
+                app:layout_constraintTop_toBottomOf="@+id/history_rounds_button" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
-
-
-

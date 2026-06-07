@@ -10,6 +10,16 @@
     <string name="logo_description">Logo for the Truco Duck game featuring a duck holding cards.</string>
     <string name="set_player_title">Who are the players?</string>
     <string name="set_player_text_field_label">Player name</string>
-    <string name="play_history_label">Play history</string>
-    <string name="reset_history_label">Reset history</string>
+    <string name="rounds_reset_label">Reset history</string>
+    <string name="earned_points_message">Points earned</string>
+    <string name="try_again_message">Try again next time.</string>
+    <string name="winner_label">Winner</string>
+    <string name="loser_label">Loser</string>
+    <string name="player">Player</string>
+    <string name="winner_title">We have a winner!</string>
+    <string name="new_game">New Game</string>
+    <string name="rounds_history_label">Rounds history</string>
+    <string name="rounds_modal_title">Score of wins</string>
+    <string name="scoring_button_description">Scoring button</string>
+    <string name="points_number">00</string>
 </resources>

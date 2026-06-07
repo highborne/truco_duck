@@ -1,18 +1,23 @@
 package com.esomakers.trucoduck
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.io.Serializable
+import java.time.LocalDateTime
 
 class MainActivity : AppCompatActivity() {
-    private var playerOneScore = 0
-    private var playerTwoScore = 0
+    private lateinit var playerOne: PlayerResult
+    private lateinit var playerTwo: PlayerResult
+    private lateinit var  gameResult: GameResult
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +29,35 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val playerOneName = intent.getStringExtra("player_one_name");
-        val playerTwoName = intent.getStringExtra("player_two_name");
+        val playerOneName = intent.getStringExtra("player_one_name").toString()
+        val playerTwoName = intent.getStringExtra("player_two_name").toString()
 
-        findViewById<TextView>(R.id.player_one_name_label).text = playerOneName;
-        findViewById<TextView>(R.id.player_two_name_label).text = playerTwoName;
+        playerOne = PlayerResult(name = playerOneName, points = 0, winNumber = 0, playerPosition = 0)
+        playerTwo = PlayerResult(name = playerTwoName, points = 0, winNumber = 0,  playerPosition = 1)
+
+        findViewById<TextView>(R.id.player_one_name_label).text = playerOneName
+        findViewById<TextView>(R.id.player_two_name_label).text = playerTwoName
+
+        val btnRoundsHistory = findViewById<Button>(R.id.history_rounds_button)
+        val btnInfNames = findViewById<Button>(R.id.inf_names_buttons)
+        val btnRoundsReset = findViewById<Button>(R.id.reset_rounds_button)
+
+        btnRoundsHistory.setOnClickListener {
+            showRoundsModal()
+        }
+        btnInfNames.setOnClickListener {
+            val intent = Intent(this, SetPlayersActivity::class.java)
+            startActivity(intent)
+        }
+        btnRoundsReset.setOnClickListener {
+            playerOne.points = 0
+            playerOne.winNumber = 0
+            playerTwo.points = 0
+            playerTwo.winNumber = 0
+
+            findViewById<TextView>(R.id.player_one_points).text = "%02d".format(0)
+            findViewById<TextView>(R.id.player_two_points).text = "%02d".format(0)
+        }
     }
     fun onPointsButtonClicked(view: View) {
         val pointsToAdd = when (view.id) {
@@ -41,17 +70,86 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (view.toString().contains("player_one")) {
-            Log.e("CLICK p1", pointsToAdd.toString())
-            playerOneScore += pointsToAdd
+            playerOne.points += pointsToAdd
+            findViewById<TextView>(R.id.player_one_points).text = "%02d".format(playerOne.points)
         } else {
-            Log.e("CLICK p2", pointsToAdd.toString())
-            playerTwoScore += pointsToAdd
+            playerTwo.points += pointsToAdd
+            findViewById<TextView>(R.id.player_two_points).text = "%02d".format(playerTwo.points)
         }
 
-        findViewById<TextView>(R.id.player_one_points).text = "%02d".format(playerOneScore)
-        findViewById<TextView>(R.id.player_two_points).text = "%02d".format(playerTwoScore)
+        verifyEndOfGame()
+    }
+    fun verifyEndOfGame() {
+        if(playerOne.points >= 12) {
+            playerOne.winNumber += 1
+            gameResult = GameResult(playerOne, playerTwo, LocalDateTime.now().toString())
 
-        Log.e("CLICK P1 points", playerOneScore.toString())
-        Log.e("CLICK p2 points", playerTwoScore.toString())
+            showWinnerScoreModal()
+            return
+        }
+
+        if(playerTwo.points >= 12) {
+            playerTwo.winNumber += 1
+            gameResult = GameResult(playerTwo, playerOne, LocalDateTime.now().toString())
+
+            showWinnerScoreModal()
+            return
+        }
+    }
+    fun showWinnerScoreModal() {
+        Log.e("CLICK", gameResult.toString())
+        val modalBuilder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+
+        val gameRepository = GameRepository(this)
+
+        gameRepository.gameSave(gameResult)
+
+        val resultModal = inflater.inflate(R.layout.modal_game_result, null)
+        modalBuilder.setView(resultModal)
+
+        val dialog = modalBuilder.create()
+
+        resultModal.findViewById<TextView>(R.id.winner_name_label).text = gameResult.winner.name
+        resultModal.findViewById<TextView>(R.id.winner_points).text = gameResult.winner.points.toString()
+
+        resultModal.findViewById<TextView>(R.id.loser_name_label).text = gameResult.loser.name
+        resultModal.findViewById<TextView>(R.id.loser_points).text = gameResult.loser.points.toString()
+
+        resultModal.findViewById<Button>(R.id.btn_close_game_result_modal).setOnClickListener {
+            playerOne.points = 0
+            playerTwo.points = 0
+
+            findViewById<TextView>(R.id.player_one_points).text = "%02d".format(0)
+            findViewById<TextView>(R.id.player_two_points).text = "%02d".format(0)
+
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+    fun showRoundsModal() {
+        val modalBuilder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+
+        val viewModal = inflater.inflate(R.layout.modal_rounds, null)
+        modalBuilder.setView(viewModal)
+
+        val dialog = modalBuilder.create()
+
+        viewModal.findViewById<TextView>(R.id.round_modal_player_one_name).text = playerOne.name
+        viewModal.findViewById<TextView>(R.id.round_modal_player_one_wins).text = playerOne.winNumber.toString()
+
+        viewModal.findViewById<TextView>(R.id.round_modal_player_two_name).text = playerTwo.name
+        viewModal.findViewById<TextView>(R.id.round_modal_player_two_wins).text = playerTwo.winNumber.toString()
+
+        viewModal.findViewById<Button>(R.id.btn_close_modal_rounds).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }
+
+data class PlayerResult(val name: String, var points: Int, var winNumber: Int, val playerPosition: Int): Serializable
+data class GameResult(var winner: PlayerResult, var loser: PlayerResult, var gameDate: String): Serializable
